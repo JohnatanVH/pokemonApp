@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Platform } from 'react-native';
 import { Tab1 } from './Tab1';
@@ -6,9 +6,15 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { Tab2Screen } from './Tab2';
 
+import SplashScreen from 'react-native-splash-screen'
+
 const Tab = createBottomTabNavigator();
 
+
 export const Tabs = () => {
+    useEffect(() => {
+        SplashScreen.hide();
+    }, [])
     return (
         <Tab.Navigator
             sceneContainerStyle={{
